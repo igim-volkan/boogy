@@ -165,68 +165,97 @@
 
 @media (max-width: 1024px) {
     .awards-section {
-        padding: 12vh 0;
+        padding: 10vh 0;
         min-height: auto;
+        display: block;
+        /* Ensure block flow on mobile */
     }
 
     .awards-container {
         width: 100%;
-        padding: 0 2rem;
+        padding: 0 10vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     .awards-content {
         max-width: 100%;
-        text-align: left;
-        /* Keep left alignment for consistency */
+        text-align: center;
+        /* Center text on mobile */
+        transform: none !important;
+        opacity: 1 !important;
     }
 
     .awards-title {
-        font-size: 10vw;
-        margin-bottom: 1.5rem;
+        font-size: 9vw !important;
+        line-height: 1.2;
+        margin-bottom: 2rem;
+        word-wrap: break-word;
     }
 
     .awards-description {
         font-size: 1.1rem;
         line-height: 1.7;
         max-width: 100%;
+        text-align: center;
     }
 
     .awards-parallax-prize {
         position: relative;
+        left: auto;
+        transform: none !important;
         right: auto;
         top: auto;
-        width: 60vw;
+        width: 70vw;
         max-width: 300px;
         margin: 4rem auto 0;
         display: block;
         opacity: 1;
-        transform: none !important;
-        /* Disable parallax on mobile to prevent overlap */
         filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
     }
 
+    .awards-parallax-prize img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+    /* Keep sparkles relative to scaled trophy */
+    .sparkle-1 {
+        top: 32%;
+        left: 16%;
+    }
+
+    .sparkle-2 {
+        top: 30%;
+        right: 26%;
+    }
+
+    .sparkle-3 {
+        bottom: 40%;
+        right: 18%;
+    }
+
     .stone-1 {
-        width: 120px;
-        left: -10%;
-        top: 10%;
-        opacity: 0.3;
-        /* Subtle on mobile */
+        display: none;
     }
 
     .stone-2 {
         width: 80px;
         right: 5%;
         bottom: 5%;
-        opacity: 0.4;
+        opacity: 0.3;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
     .awards-title {
-        font-size: 12vw;
+        font-size: 11vw !important;
     }
 
-    .awards-parallax-prize {
-        width: 70vw;
+    .awards-container {
+        padding: 0 8vw;
     }
 }

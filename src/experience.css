@@ -84,14 +84,16 @@
 
 @media (max-width: 1024px) {
     .experience-section {
-        padding: 10vh 0;
+        padding: 15vh 0;
+        /* More breathing room */
+        overflow: hidden;
     }
 
     .experience-container {
         flex-direction: column;
-        gap: 3rem;
+        gap: 4rem;
         width: 100%;
-        padding: 0 2rem;
+        padding: 0 10vw;
     }
 
     .experience-title-column,
@@ -100,8 +102,9 @@
     }
 
     .experience-title {
-        font-size: 10vw;
-        /* Increased for better mobile impact */
+        font-size: 9vw;
+        overflow: visible;
+        /* Ensure revealed text isn't clipped */
     }
 
     .experience-description {
