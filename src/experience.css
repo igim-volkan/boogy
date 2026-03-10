@@ -18,6 +18,8 @@
     max-width: 1100px;
     margin: 0 auto;
     gap: 8vw;
+    padding: 0 5vw;
+    /* Added padding for mobile safety */
 }
 
 .experience-title-column {
@@ -33,7 +35,6 @@
 }
 
 .experience-title {
-    font-family: 'Stack Sans Notch', sans-serif;
     font-size: 3.5vw;
     /* Balanced impactful title */
     line-height: 1.1;
@@ -49,6 +50,7 @@
 }
 
 .title-small {
+    font-family: 'Turret Road', sans-serif;
     font-size: 0.55em;
     font-weight: 500;
     letter-spacing: 0.03em;
@@ -59,6 +61,7 @@
 }
 
 .title-big {
+    font-family: 'Stack Sans Notch', sans-serif;
     display: block;
 }
 
@@ -80,10 +83,15 @@
 }
 
 @media (max-width: 1024px) {
+    .experience-section {
+        padding: 10vh 0;
+    }
+
     .experience-container {
         flex-direction: column;
-        gap: 2rem;
-        width: 90%;
+        gap: 3rem;
+        width: 100%;
+        padding: 0 2rem;
     }
 
     .experience-title-column,
@@ -92,6 +100,18 @@
     }
 
     .experience-title {
-        font-size: 7vw;
+        font-size: 10vw;
+        /* Increased for better mobile impact */
+    }
+
+    .experience-description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 600px) {
+    .experience-title {
+        font-size: 12vw;
     }
 }

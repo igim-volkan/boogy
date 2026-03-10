@@ -49,7 +49,7 @@
 }
 
 .cop31-location {
-    font-family: 'Turret Road', sans-serif;
+    font-family: 'Stack Sans Notch', sans-serif;
     font-size: 10px;
     font-weight: 400;
     color: rgba(174, 242, 163, 0.7);
@@ -73,7 +73,7 @@
 }
 
 .timer-value {
-    font-family: 'Stack Sans Notch', sans-serif;
+    font-family: 'Turret Road', sans-serif;
     font-size: 2rem;
     font-weight: 700;
     color: #fff;
@@ -91,7 +91,7 @@
 }
 
 .timer-sep {
-    font-family: 'Stack Sans Notch', sans-serif;
+    font-family: 'Turret Road', sans-serif;
     font-size: 1.6rem;
     font-weight: 300;
     color: rgba(174, 242, 163, 0.4);

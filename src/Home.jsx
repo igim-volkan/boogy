@@ -5,6 +5,7 @@ import ParallaxStones from './ParallaxStones';
 import ServicesGlobe from './ServicesGlobe';
 import NightSkyText from './NightSkyText';
 import ExperienceSection from './ExperienceSection';
+import AwardsSection from './AwardsSection';
 import COP31Countdown from './COP31Countdown';
 
 const TEXT_CONTENT = "On the journey we began in 1991, we discovered how ideas can transform experiences. Since then, we have grown by delivering countless projects around the world. Yet we have always had one single purpose: to add a touch of magic to the world.";
@@ -91,6 +92,9 @@ const Home = () => {
 
             {/* Experience Section with Sticky Logos at the end */}
             <ExperienceSection />
+
+            {/* Awards Section with Parallax Prize and Stones */}
+            <AwardsSection />
         </div>
     );
 };
