@@ -1,0 +1,152 @@
+.about-us-section {
+    position: relative;
+    width: 100vw;
+    min-height: 200vh;
+    /* Giving enough room for scroll effects */
+    background-color: #000;
+}
+
+/* --- BACKGROUND & CRT EFFECTS --- */
+.about-bg-container {
+    position: relative;
+    width: 100vw;
+    height: 40vh;
+    /* Reduced height */
+    z-index: 0;
+    overflow: hidden;
+}
+
+.about-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.8) contrast(1.2) brightness(0.6);
+    /* Slight RGB shift for chromatic aberration built into CSS if needed, 
+       but standard filters work best. We'll use a mix-blend on the overlay. */
+}
+
+.crt-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 4px, 6px 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.vignette-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 30%, #000 90%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* --- PARALLAX HEADER --- */
+.about-header-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 40vh;
+    /* Match bg height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.about-header-text {
+    font-family: 'Stack Sans Notch', sans-serif;
+    font-size: 14vw;
+    font-weight: 800;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.4);
+    line-height: 1;
+    text-transform: uppercase;
+    will-change: transform;
+    opacity: 0.6;
+    mix-blend-mode: overlay;
+    display: block;
+    white-space: nowrap;
+}
+
+/* --- SCROLL REVEAL TEXTS --- */
+.about-content-wrapper {
+    position: relative;
+    width: 100%;
+    padding: 15vh 0;
+}
+
+.about-text-container {
+    position: relative;
+    z-index: 10;
+    width: 66.66%;
+    max-width: 1200px;
+    margin: 0 auto 5vh auto;
+    font-family: 'Stack Sans Notch', sans-serif;
+    font-size: 3.5vw;
+    line-height: 1.4;
+    font-weight: 600;
+    text-align: left;
+    color: #fff;
+}
+
+.about-text-container-small {
+    position: relative;
+    z-index: 10;
+    width: 50%;
+    /* 6/12 columns */
+    max-width: 1200px;
+    margin-left: 16.667%;
+    /* Aligns left edge with the 66.66% centered container above */
+    margin-bottom: 4vh;
+    margin-top: 0;
+    margin-right: auto;
+    font-family: 'Stack Sans Notch', sans-serif;
+    font-size: 1.5vw;
+    line-height: 1.6;
+    font-weight: 400;
+    text-align: left;
+    color: #ccc;
+}
+
+.about-text-container .word,
+.about-text-container-small .word {
+    opacity: 0.15;
+    display: inline-block;
+    margin-right: 0.25em;
+    transition: opacity 0.4s ease, filter 0.4s ease, transform 0.4s ease;
+    filter: blur(2px);
+    will-change: opacity, filter;
+}
+
+.about-text-container .word.active,
+.about-text-container-small .word.active {
+    opacity: 1;
+    color: #fff;
+    filter: blur(0);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+/* --- OUR TEAM SECTION --- */
+.about-team-container {
+    position: relative;
+    width: 100%;
+    padding: 10vh 0 20vh 0;
+    /* Adding space at the bottom */
+    z-index: 10;
+}
+
+@media (max-width: 768px) {
+    .about-header-text {
+        font-size: 14vw;
+    }
+
+    .about-text-container {
+        font-size: 1.8rem;
+        width: 90%;
+    }
+}

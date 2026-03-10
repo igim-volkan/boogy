@@ -1,0 +1,153 @@
+/* nightsky.css */
+@import url('https://fonts.googleapis.com/css2?family=Turret+Road:wght@300;400;500;700;800&display=swap');
+
+.nightsky-section {
+    position: relative;
+    min-height: 150vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    padding: 10vh 5vw;
+}
+
+.nightsky-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.nightsky-text-container {
+    position: relative;
+    z-index: 2;
+    width: 83.33%;
+    /* 10/12 columns */
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.3em 0.6em;
+}
+
+.brutalist-word {
+    font-family: 'Stack Sans Notch', sans-serif;
+    font-size: 3.5vw;
+    line-height: 1.2;
+    color: rgba(255, 255, 255, 0.1);
+    transition: color 0.5s ease;
+    cursor: default;
+    display: inline-block;
+    font-weight: 500;
+}
+
+.brutalist-word.active {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.brutalist-word.highlighted {
+    color: #aef2a3;
+    /* Brand green */
+    text-shadow: 0 0 20px rgba(174, 242, 163, 0.4);
+}
+
+.serif-vowel {
+    font-family: 'Turret Road', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    margin: 0 0.02em;
+}
+
+/* Futuristic DETAILS Button */
+.details-btn-wrapper {
+    position: relative;
+    z-index: 2;
+    margin-top: 10vh;
+}
+
+.details-btn {
+    position: relative;
+    padding: 18px 60px;
+    background: rgba(255, 255, 255, 0.03);
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'Turret Road', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.35em;
+    cursor: none;
+    text-decoration: none;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    overflow: hidden;
+}
+
+.btn-corner {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    transition: all 0.4s ease;
+}
+
+.btn-corner.top-left {
+    top: 0;
+    left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-corner.top-right {
+    top: 0;
+    right: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-corner.bottom-left {
+    bottom: 0;
+    left: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-corner.bottom-right {
+    bottom: 0;
+    right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #aef2a3, transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    animation: scan-move 2s linear infinite paused;
+}
+
+.details-btn:hover {
+    background: rgba(174, 242, 163, 0.05);
+    color: #aef2a3;
+    text-shadow: 0 0 10px rgba(174, 242, 163, 0.3);
+    transform: scale(1.08);
+}
+
+.details-btn:hover .btn-corner {
+    width: 16px;
+    height: 16px;
+    border-color: #aef2a3;
+}
+
+@media (max-width: 768px) {
+    .brutalist-word {
+        font-size: 10vw;
+    }
+}

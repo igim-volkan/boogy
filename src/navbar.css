@@ -1,0 +1,132 @@
+/* ── Navbar ── */
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 22px 30px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 3vw;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-item {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-link {
+    font-family: 'Stack Sans Notch', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    position: relative;
+    padding: 4px 0;
+}
+
+.navbar-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #aef2a3;
+    transition: width 0.3s ease;
+}
+
+.navbar-link:hover {
+    color: #fff;
+}
+
+.navbar-link:hover::after {
+    width: 100%;
+}
+
+.navbar-link.current {
+    color: #aef2a3;
+}
+
+.navbar-link.current::after {
+    width: 100%;
+    background-color: #aef2a3;
+}
+
+/* ── Hamburger (mobile) ── */
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.hamburger-line {
+    width: 24px;
+    height: 1.5px;
+    background: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+}
+
+.hamburger-line.open:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+    background: #aef2a3;
+}
+
+.hamburger-line.open:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-line.open:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+    background: #aef2a3;
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px;
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+
+    .navbar-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5vh;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .navbar-links.active {
+        transform: translateX(0);
+    }
+
+    .navbar-link {
+        font-size: 18px;
+        letter-spacing: 0.3em;
+    }
+}

@@ -1,0 +1,80 @@
+.client-marquee-section {
+    padding: 100px 0 30px 0;
+    /* Reduced bottom padding from 100px down to 30px */
+    /* Increased from 60px to prevent clipping on hover */
+    background: #000;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee-label {
+    font-family: 'Stack Sans Notch', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #aef2a3;
+    text-align: center;
+    margin-bottom: 30px;
+    opacity: 0.6;
+}
+
+.marquee-outer {
+    display: flex;
+    overflow: visible;
+    /* Changed from hidden to allow hover scale extension */
+    width: 100%;
+}
+
+.marquee-inner {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee-scroll 40s linear infinite;
+    padding: 20px 0;
+    /* Add internal padding for scale room */
+}
+
+.logo-item {
+    padding: 0 100px;
+    /* Increased padding for larger logos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* pure white and slight opacity */
+    filter: brightness(0) invert(1) opacity(0.6);
+    transition: all 0.3s ease;
+}
+
+.logo-item:hover {
+    /* solid white on hover */
+    filter: brightness(0) invert(1) opacity(1);
+    transform: scale(1.1);
+}
+
+.marquee-logo-img {
+    height: 176px;
+    /* Increased by 10% */
+    width: auto;
+    max-width: 440px;
+    object-fit: contain;
+}
+
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-item {
+        padding: 0 50px;
+    }
+
+    .marquee-logo-img {
+        height: 80px;
+    }
+}

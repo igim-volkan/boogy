@@ -1,0 +1,149 @@
+.footer-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    /* Half screen reveal */
+    background-color: #252358;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+/* Ensure the content above has a margin or padding to allow the reveal at the very end */
+/* This is handled in App.jsx via a spacer div or padding on the last section */
+
+.footer-content {
+    width: 90%;
+    max-width: 1400px;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5vh 0;
+}
+
+/* Marquee Animation */
+.footer-marquee-container {
+    overflow: hidden;
+    width: 100vw;
+    /* Take full width for seamless scroll */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Center the container to break out of .footer-content max-width if needed */
+}
+
+.footer-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: scrollFooterRight 20s linear infinite;
+}
+
+.footer-marquee-item {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    padding-right: 5vw;
+}
+
+.footer-brand {
+    font-family: 'Stack Sans Notch', sans-serif;
+    font-size: 10vw;
+    font-weight: 800;
+    line-height: 0.8;
+    letter-spacing: -0.02em;
+    padding-bottom: 2vw;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.4);
+}
+
+.footer-tagline {
+    font-family: 'Turret Road', sans-serif;
+    font-size: 3vw;
+    font-weight: 300;
+    line-height: 1.1;
+}
+
+@keyframes scrollFooterRight {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+}
+
+.footer-nav,
+.footer-socials {
+    display: flex;
+    gap: 30px;
+}
+
+.footer-link,
+.footer-social-link {
+    font-family: 'Stack Sans Notch', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.25em;
+    position: relative;
+    transition: opacity 0.3s ease;
+}
+
+.footer-link:hover,
+.footer-social-link:hover {
+    opacity: 0.6;
+}
+
+/* Add a line under links on hover */
+.footer-link::after,
+.footer-social-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+.footer-link:hover::after,
+.footer-social-link:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .footer-brand {
+        font-size: 18vw;
+    }
+
+    .footer-tagline {
+        font-size: 6vw;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    .footer-nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

@@ -1,0 +1,125 @@
+/* ── COP31 Countdown Card ── */
+.cop31-card {
+    position: absolute;
+    bottom: 100px;
+    right: 5vw;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(174, 242, 163, 0.15);
+    border-radius: 2px;
+    padding: 28px 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    min-width: 320px;
+}
+
+.cop31-badge {
+    font-family: 'Turret Road', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.35em;
+    color: #aef2a3;
+    background: rgba(174, 242, 163, 0.08);
+    border: 1px solid rgba(174, 242, 163, 0.2);
+    padding: 4px 12px;
+    border-radius: 1px;
+    margin-bottom: 4px;
+}
+
+.cop31-title {
+    font-family: 'Stack Sans Notch', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.cop31-subtitle {
+    font-family: 'Stack Sans Notch', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+.cop31-location {
+    font-family: 'Turret Road', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    color: rgba(174, 242, 163, 0.7);
+    letter-spacing: 0.15em;
+    margin: 0 0 8px 0;
+}
+
+/* ── Timer ── */
+.cop31-timer {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.timer-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 52px;
+}
+
+.timer-value {
+    font-family: 'Stack Sans Notch', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    font-variant-numeric: tabular-nums;
+}
+
+.timer-label {
+    font-family: 'Turret Road', sans-serif;
+    font-size: 8px;
+    letter-spacing: 0.3em;
+    color: rgba(255, 255, 255, 0.35);
+    margin-top: 4px;
+}
+
+.timer-sep {
+    font-family: 'Stack Sans Notch', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: rgba(174, 242, 163, 0.4);
+    line-height: 1;
+    margin-bottom: 14px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .cop31-card {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin: 20px auto 0;
+        min-width: unset;
+        width: 90vw;
+        padding: 20px 24px;
+    }
+
+    .cop31-title {
+        font-size: 2rem;
+    }
+
+    .timer-value {
+        font-size: 1.4rem;
+    }
+
+    .timer-block {
+        min-width: 40px;
+    }
+}
