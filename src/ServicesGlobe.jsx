@@ -26,7 +26,7 @@ const ServicesGlobe = () => {
         setHoveredService(serviceName);
         try {
             const audio = new Audio('/click.wav');
-            audio.volume = 0.5;
+            audio.volume = 0.1;
             audio.play().catch(e => console.log("Audio play failed, user interaction needed:", e));
         } catch (e) {
             console.log("Audio play failed:", e);
